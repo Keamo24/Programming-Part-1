@@ -10,7 +10,8 @@
 /**
  * Login Class for Registration and Authentication
  * 1. Oracle. (2023). Java Regular Expressions. Available at: https://docs.oracle.com/javase/tutorial/essential/regex/
- * 2. 
+ * 2. YouTube. (2022). How to link github to Netbeans projects. Available at: https://youtu.be/UOIPS-ewFHg 
+ * 3. YouTube. (2025). PROG5121 Unit Testing Getting started. Available at: https://www.youtube.com/watch?v=MOhiM2SXZl0
  */
 public class Login {
 
