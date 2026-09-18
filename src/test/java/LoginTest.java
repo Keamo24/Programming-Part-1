@@ -21,42 +21,42 @@ public class LoginTest {
     public void testUsernameCorrectlyFormatted() {
         // Test Data: "kyl_1"
         boolean result = login.checkUserName("kyl_1");
-        assertTrue("Username should be correctly formatted", result);
+        assertTrue(result); // Removed the message string to fix UnsupportedOperation error
     }
 
     @Test
     public void testUsernameIncorrectlyFormatted() {
         // Test Data: "kyle!!!!!!"
         boolean result = login.checkUserName("kyle!!!!!!");
-        assertFalse("Username should be incorrectly formatted", result);
+        assertFalse(result); // Removed the message string to fix UnsupportedOperation error
     }
 
     @Test
     public void testPasswordMeetsComplexity() {
         // Test Data: "Ch&&sec@ke99!"
         boolean result = login.checkPasswordComplexity("Ch&&sec@ke99!");
-        assertTrue("Password should meet complexity requirements", result);
+        assertTrue(result); // Removed the message string
     }
 
     @Test
     public void testPasswordDoesNotMeetComplexity() {
         // Test Data: "password"
         boolean result = login.checkPasswordComplexity("password");
-        assertFalse("Password should not meet complexity requirements", result);
+        assertFalse(result); // Removed the message string
     }
 
     @Test
     public void testCellPhoneCorrectlyFormatted() {
         // Test Data: +27838968976
         boolean result = login.checkCellPhoneNumber("+27838968976");
-        assertTrue("Cell phone number should be correctly formatted", result);
+        assertTrue(result); // Removed the message string
     }
 
     @Test
     public void testCellPhoneIncorrectlyFormatted() {
         // Test Data: 08966553
         boolean result = login.checkCellPhoneNumber("08966553");
-        assertFalse("Cell phone number should be incorrectly formatted", result);
+        assertFalse(result); // Removed the message string
     }
 
     // --- assertEquals Tests (For registerUser messages) ---
@@ -98,7 +98,7 @@ public class LoginTest {
         
         // Attempt login with correct credentials
         boolean isLoggedIn = login.loginUser("kyl_1", "Ch&&sec@ke99!");
-        assertTrue("Login should be successful", isLoggedIn);
+        assertTrue(isLoggedIn); // Removed message string
         
         // Verify the message
         String expectedMessage = "Welcome " + testFirstName + ", " + testLastName + " it is great to see you again.";
@@ -112,18 +112,10 @@ public class LoginTest {
         
         // Attempt login with incorrect credentials
         boolean isLoggedIn = login.loginUser("kyl_1", "WrongPassword123!");
-        assertFalse("Login should fail", isLoggedIn);
+        assertFalse(isLoggedIn); // Removed message string
         
         // Verify the message
         String expectedMessage = "Username or password incorrect, please try again.";
         assertEquals(expectedMessage, login.returnLoginStatus(isLoggedIn));
-    }
-
-    private void assertTrue(String username_should_be_correctly_formatted, boolean result) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void assertFalse(String cell_phone_number_should_be_incorrectly_f, boolean result) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
