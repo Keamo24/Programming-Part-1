@@ -9,11 +9,6 @@
  */
 /**
  * Login Class for Registration and Authentication
- * 
- * References:
- * 1. Oracle. (2023). Java Regular Expressions. Available at: https://docs.oracle.com/javase/tutorial/essential/regex/
- * 2. Independent Institute of Education. (2026). Programming Assignment Guidelines.
- * [Add any other references you used here as required by the assignment]
  */
 public class Login {
 
