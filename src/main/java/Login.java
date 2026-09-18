@@ -12,6 +12,8 @@
  * 1. Oracle. (2023). Java Regular Expressions. Available at: https://docs.oracle.com/javase/tutorial/essential/regex/
  * 2. YouTube. (2022). How to link github to Netbeans projects. Available at: https://youtu.be/UOIPS-ewFHg 
  * 3. YouTube. (2025). PROG5121 Unit Testing Getting started. Available at: https://www.youtube.com/watch?v=MOhiM2SXZl0
+ * 5. W3Schools. (2026). Java Regular Expressions. Available at: https://www.w3schools.com/java/java_regex.asp
+ * 6. OpenAI. (2026). ChatGPT (Version 3.5) [Large language model]. Available at: https://chat.openai.com
  */
 public class Login {
 
