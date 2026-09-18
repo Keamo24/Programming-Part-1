@@ -12,8 +12,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            Login loginSystem = new Login();
-            
+            Login loginSystem = new Login(); // This creates the object to use your Login class
             System.out.println("--- Registration ---");
             System.out.print("Enter First Name: ");
             String fName = scanner.nextLine();
@@ -25,11 +24,9 @@ public class Main {
             String pass = scanner.nextLine();
             System.out.print("Enter Cell Phone (+27...): ");
             String cell = scanner.nextLine();
-            
             // Call the registerUser method from your Login class
             String registrationMessage = loginSystem.registerUser(uName, pass, cell, fName, lName);
             System.out.println("\nRegistration Status:\n" + registrationMessage);
-            
             // Only proceed to login if registration was fully successful
             if (registrationMessage.contains("successfully captured")) {
                 System.out.println("\n--- Login ---");
@@ -44,6 +41,7 @@ public class Main {
             } else {
                 System.out.println("\nRegistration failed. Cannot proceed to login.");
             }
-        }
+            // Always good practice to close the scanner
+        } // This creates the object to use your Login class
     }
 }
