@@ -3,16 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class MessageTest {
 
     // We will use this message text for the hash and length tests
     String testMessageText = "Hi Mike, can you join us for dinner tonight?";
-    
     // The expected hash from Image 9 based on the test data
-    String expectedHash = "00:0:HITONIGHT"; 
+ 
 
     @Test
     public void testMessageLengthSuccess() {
