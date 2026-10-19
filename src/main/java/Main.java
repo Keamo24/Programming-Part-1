@@ -12,8 +12,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            Login loginSystem = new Login(); // This creates the object to use your Login class
-            System.out.println("--- Registration ---");
+            Login loginSystem = new Login();
+            
+            System.out.println("=====================================");
+            System.out.println("       WELCOME TO QUICKCHAT          ");
+            System.out.println("=====================================");
+            
+            // --- PART 1: REGISTRATION ---
+            System.out.println("\n--- Registration ---");
             System.out.print("Enter First Name: ");
             String fName = scanner.nextLine();
             System.out.print("Enter Last Name: ");
@@ -24,24 +30,36 @@ public class Main {
             String pass = scanner.nextLine();
             System.out.print("Enter Cell Phone (+27...): ");
             String cell = scanner.nextLine();
+            
             // Call the registerUser method from your Login class
             String registrationMessage = loginSystem.registerUser(uName, pass, cell, fName, lName);
             System.out.println("\nRegistration Status:\n" + registrationMessage);
-            // Only proceed to login if registration was fully successful
+            
+            // --- PART 2: LOGIN & MESSAGING ---
+            // Only proceed to login if registration was successful
             if (registrationMessage.contains("successfully captured")) {
+                
                 System.out.println("\n--- Login ---");
                 System.out.print("Enter Username: ");
                 String loginUser = scanner.nextLine();
                 System.out.print("Enter Password: ");
                 String loginPass = scanner.nextLine();
                 
-                // Call the login methods from your Login class
+                // Check credentials
                 boolean isLoggedIn = loginSystem.loginUser(loginUser, loginPass);
                 System.out.println("\nLogin Status:\n" + loginSystem.returnLoginStatus(isLoggedIn));
+                
+                // If login works, start the chat menu!
+                if (isLoggedIn) {
+                    QuickChat chatApp = new QuickChat();
+                    chatApp.startChat(scanner);
+                } else {
+                    System.out.println("Access Denied. You must log in successfully to send messages.");
+                }
+                
             } else {
                 System.out.println("\nRegistration failed. Cannot proceed to login.");
             }
-            // Always good practice to close the scanner
-        } // This creates the object to use your Login class
+        }
     }
 }
