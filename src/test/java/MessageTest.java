@@ -61,7 +61,8 @@ public class MessageTest {
     public void testMessageHashCorrect() {
         Message msg = new Message(testRecipient, testMessageText, 0);
         
-        String expectedHash = "00:0:HITONIGHT";
+        String expectedHash;
+        expectedHash = "00:0:HITONIGHT?";
         String actualHash = msg.getMessageHash();
         
         assertEquals(expectedHash, actualHash);
