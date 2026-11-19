@@ -17,6 +17,7 @@ public class Message {
     private String messageText;
     private String messageHash;
 
+    
     public Message(String recipient, String messageText, int messageNumber) {
         this.recipient = recipient;
         this.messageText = messageText;
