@@ -78,6 +78,16 @@ public class Message {
             default -> "Invalid choice.";
         };
     }
+    
+    // Generate a JSON string for this message
+public String toJSON() {
+    return "{\n" +
+           "  \"messageID\": \"" + messageID + "\",\n" +
+           "  \"recipient\": \"" + recipient + "\",\n" +
+           "  \"messageText\": \"" + messageText + "\",\n" +
+           "  \"messageHash\": \"" + messageHash + "\"\n" +
+           "}";
+}
     // Research method (Placeholder for now)
     public String storeMessage() {
         // This is where you would write JSON logic later
