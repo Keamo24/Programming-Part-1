@@ -35,8 +35,9 @@ public class MessageManagerTest {
         // Test Data: message 4
         // Expected: "It is dinner time!"
         // Since the ID is random, we get the ID dynamically from the test data
-        String msg4ID = MessageManager.sentMessages.get(1).getMessageID(); 
-        assertEquals("It is dinner time!", MessageManager.searchByID(msg4ID));
+      // Gets the ID of Message 2 (which IS stored)
+String msgID = MessageManager.storedMessages.get(0).getMessageID(); 
+assertEquals("Where are you? You are late! I have asked you to be on time.", MessageManager.searchByID(msgID));
     }
 
     @Test
